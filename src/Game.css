@@ -1,0 +1,88 @@
+body {
+  background-color: rgb(22, 9, 83);
+}
+
+.GameContent {
+  display: flex;
+  justify-content: center;
+  margin-top: 64px;
+  border: 1px solid;
+  border-color: aqua;
+}
+
+.Game {
+  display: grid;
+  border: 1px solid;
+  border-color: fuchsia;
+  margin-right: 24px;
+}
+
+.GameStatus {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  color: #ffffff;
+  font-size: 24px;
+}
+
+.Board {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  padding: 0px;
+  margin: 0px;
+  border: 1px solid;
+  border-color: crimson;
+}
+
+.BoardRow {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  margin: 0px;
+  padding: 0px;
+  gap: 0px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+
+.Tile {
+  height: 128px;
+  width: 128px;
+  border: 1px solid;
+  font-size: 50px;
+  color: black;
+  cursor: pointer;
+  background-color: rgb(22, 9, 83);
+  border: 1px solid;
+  border-color: white;
+}
+
+.Tile:hover {
+  background-color: aquamarine;
+}
+
+.Log {
+  display: block;
+  background-color: #33373d;
+  padding-right: 24px;
+  border: 1px solid;
+  border-color: yellow;
+}
+
+.LogItem {
+  justify-content: left;
+  padding: 0px;
+  height: 35px;
+  font-size: 12px;
+  color: lightgrey;
+}
+
+.ScoreStatus {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  color: #ffffff;
+  font-size: 24px;
+}
