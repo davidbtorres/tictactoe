@@ -44,14 +44,14 @@ export function useGameState() {
   const xIsNext = gameState.step % 2 === 0
   const winner = calculateWinner(current)
 
-  function handleClick(square: number) {
+  function handleClick(tile: number) {
     const history = gameState.history.slice(0, gameState.step + 1)
     const boardState = history[history.length - 1]
-    if (calculateWinner(boardState) || boardState[square]) {
+    if (calculateWinner(boardState) || boardState[tile]) {
       return
     }
     const newBoardState = boardState.slice()
-    newBoardState[square] = gameState.step % 2 === 0 ? 'X' : 'O'
+    newBoardState[tile] = gameState.step % 2 === 0 ? 'X' : 'O'
     history.push(newBoardState)
     setGameState({
       history: history,
