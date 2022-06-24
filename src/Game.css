@@ -6,14 +6,10 @@ body {
   display: flex;
   justify-content: center;
   margin-top: 64px;
-  border: 1px solid;
-  border-color: aqua;
 }
 
 .Game {
   display: grid;
-  border: 1px solid;
-  border-color: fuchsia;
   margin-right: 24px;
 }
 
@@ -31,8 +27,6 @@ body {
   gap: 0px;
   padding: 0px;
   margin: 0px;
-  border: 1px solid;
-  border-color: crimson;
 }
 
 .BoardRow {
@@ -51,8 +45,8 @@ body {
   height: 128px;
   width: 128px;
   border: 1px solid;
-  font-size: 50px;
-  color: black;
+  font-size: 60px;
+  color: white;
   cursor: pointer;
   background-color: rgb(22, 9, 83);
   border: 1px solid;
@@ -65,10 +59,9 @@ body {
 
 .Log {
   display: block;
-  background-color: #33373d;
   padding-right: 24px;
   border: 1px solid;
-  border-color: yellow;
+  border-color: white;
 }
 
 .LogItem {
@@ -85,4 +78,17 @@ body {
   padding: 10px;
   color: #ffffff;
   font-size: 24px;
+}
+
+.ScoreKeeper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.PlayerScore {
+  margin-top: 20px;
+  margin-right: 40px;
+  margin-left: 40px;
 }

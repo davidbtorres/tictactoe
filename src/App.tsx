@@ -7,10 +7,35 @@ function App() {
   const [activeGame, setActiveGame] = useState<boolean>(false)
   return (
     <div>
+      <div>
+        {activeGame && (
+          <button
+            className="BackButton"
+            onClick={() => setActiveGame(!activeGame)}
+          >
+            Back
+          </button>
+        )}
+      </div>
       <div>{activeGame && <Game />}</div>
       <div className="AppContent">
-        <h2 className="Title">TicTacToe</h2>
-        <button onClick={() => setActiveGame(!activeGame)}>PLAY</button>
+        {!activeGame && <h2 className="Title">TicTacToe</h2>}
+        {!activeGame && (
+          <div className="TitleButtonContent">
+            <button
+              className="TitleButton"
+              onClick={() => setActiveGame(!activeGame)}
+            >
+              PLAY
+            </button>
+            <button
+              className="TitleButton"
+              onClick={() => setActiveGame(!activeGame)}
+            >
+              SET UP GAME
+            </button>
+          </div>
+        )}
       </div>
     </div>
   )
