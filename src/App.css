@@ -6,6 +6,14 @@
   align-content: center;
 }
 
+.SetupContent {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+}
+
 .Title {
   display: flex;
   justify-content: center;
