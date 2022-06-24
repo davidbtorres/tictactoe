@@ -7,14 +7,14 @@ interface Props {
   label: string
 }
 
-export const Checkbox = (props: Props) => {
+export const RadioButton = (props: Props) => {
   return (
     <div>
       <label className="RadioButtonLabel" htmlFor={props.label}>
         {props.label}
       </label>
       <input
-        type="Checkbox"
+        type="radio"
         id={props.label}
         checked={props.isChecked}
         onChange={props.handleChange}

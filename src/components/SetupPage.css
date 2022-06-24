@@ -1,0 +1,35 @@
+.SetupContentParent {
+  border: 1px solid;
+  border-color: white;
+}
+
+.SetupContent {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  margin: 30px;
+}
+
+.StartGameButtonParent {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  margin-top: 30px;
+}
+
+.StartGameButton {
+  background-color: #ffffff;
+  border: none;
+  color: rgb(22, 9, 83);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 10px 2px;
+  cursor: pointer;
+  font-size: 16px;
+}

@@ -2,30 +2,30 @@ import React from 'react'
 import './App.css'
 import { useState } from 'react'
 import { Game } from './components/Game'
-import { Checkbox } from './components/Checkbox'
+import { Setup } from './components/SetupPage'
 
 function App() {
   const [activeGame, setActiveGame] = useState<boolean>(false)
   const [setupGame, setSetupGame] = useState<boolean>(false)
-  const [isCheckedPlayer, setIsCheckedPlayer] = useState<boolean>(true)
-  const handleChangePlayer = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setIsCheckedPlayer(e.target.checked)
-    setIsCheckedComputer(!e.target.checked)
-  }
 
-  const [isCheckedComputer, setIsCheckedComputer] = useState<boolean>(false)
-  const handleChangeComputer = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setIsCheckedComputer(e.target.checked)
-    setIsCheckedPlayer(!e.target.checked)
+  const goToTitle = () => {
+    setActiveGame(false)
+    setSetupGame(false)
+  }
+  const goToSetup = () => {
+    setActiveGame(false)
+    setSetupGame(true)
+  }
+  const goToGame = () => {
+    console.log('Button Pressed')
+    setActiveGame(true)
+    setSetupGame(false)
   }
   return (
     <div>
       <div>
-        {activeGame && (
-          <button
-            className="BackButton"
-            onClick={() => setActiveGame(!activeGame)}
-          >
+        {(activeGame || setupGame) && (
+          <button className="BackButton" onClick={() => goToTitle()}>
             Back
           </button>
         )}
@@ -35,34 +35,15 @@ function App() {
         {!activeGame && <h2 className="Title">TicTacToe</h2>}
         {!activeGame && !setupGame && (
           <div className="TitleButtonContent">
-            <button
-              className="TitleButton"
-              onClick={() => setActiveGame(!activeGame)}
-            >
+            <button className="TitleButton" onClick={() => goToGame()}>
               PLAY
             </button>
-            <button
-              className="TitleButton"
-              onClick={() => setSetupGame(!setupGame)}
-            >
+            <button className="TitleButton" onClick={() => goToSetup()}>
               SET UP GAME
             </button>
           </div>
         )}
-        {!activeGame && setupGame && (
-          <div className="SetupContent">
-            <Checkbox
-              handleChange={handleChangePlayer}
-              isChecked={isCheckedPlayer}
-              label="VS Player"
-            ></Checkbox>
-            <Checkbox
-              handleChange={handleChangeComputer}
-              isChecked={isCheckedComputer}
-              label="VS Computer"
-            ></Checkbox>
-          </div>
-        )}
+        {!activeGame && setupGame && <Setup startGame={() => goToGame()} />}
       </div>
     </div>
   )
